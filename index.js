@@ -1,14 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const usersRouter = require("./routers/users");
-const customersRouter = require("./routers/customers");
+const apiRouter = require("./routers/api");
 
 const app = express();
 const port = process.env.PORT || 4001;
 
 app.use(bodyParser.json());
 app.use("/users", usersRouter);
-app.use("/api/customers", customersRouter);
+app.use("/api", apiRouter);
 
 app.use(express.static("public"));
 
